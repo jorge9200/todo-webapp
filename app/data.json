@@ -1,1 +1,15 @@
-{"toDos":[{"id":"fe871150-2de3-4f2b-98fc-f3124e7d9bd2","title":"Be awesome","done":false},{"id":"05778d44-5f00-4e4f-bd6f-e8e67030ff9e","title":"Work a lot","done":false}]}
+{
+  "users": [],
+  "toDos": [
+    {
+      "id": "fe871150-2de3-4f2b-98fc-f3124e7d9bd2",
+      "title": "Ser un loquito",
+      "done": true
+    },
+    {
+      "id": "05778d44-5f00-4e4f-bd6f-e8e67030ff9e",
+      "title": "Terminar este ejercicio",
+      "done": false
+    }
+  ]
+}

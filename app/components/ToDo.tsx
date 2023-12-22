@@ -35,10 +35,11 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
     setRemoveModalOpen(false);
   };
 
-  const handleCompleteToDo = async () => {
+  const handleCompleteToDo = async (checked: boolean) => {
+    setToDoCompleted(checked);
     const res = await fetch("http://localhost:3000/api", {
       method: "PUT",
-      body: JSON.stringify({ ...toDo, done: toDoCompleted }),
+      body: JSON.stringify({ ...toDo, done: checked }),
     });
     setEditModalOpen(false);
   };
@@ -51,8 +52,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
           type="checkbox"
           checked={toDoCompleted}
           className="checkbox checkbox-primary checkbox-sm"
-          onClick={handleCompleteToDo}
-          onChange={(e) => setToDoCompleted(!!e.target.value)}
+          onChange={(e) => handleCompleteToDo(e.target.checked)}
         />
       </td>
       <td className="w-full">{toDo.title}</td>

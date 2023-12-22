@@ -3,9 +3,12 @@ import { promises as fs } from "fs";
 
 export async function GET() {
   try {
-    const file = await fs.readFile(process.cwd() + "/app/data.json", "utf8");
-    const data = JSON.parse(file);
-    return Response.json(data.toDos);
+    const jsonData = await fs.readFile(
+      process.cwd() + "/app/data.json",
+      "utf8"
+    );
+    const objectData = JSON.parse(jsonData);
+    return Response.json(objectData.toDos);
   } catch (error) {
     console.log("Error: ", error);
     return new Response("Error reading data", {
@@ -50,6 +53,7 @@ export async function PUT(req: Request) {
     const editedToDo = await req.json();
 
     const updatedData = JSON.stringify({
+      ...objectData,
       toDos: objectData.toDos.map((toDo: ToDoItem) =>
         toDo.id === editedToDo.id ? editedToDo : toDo
       ),
@@ -78,6 +82,7 @@ export async function DELETE(req: Request) {
     const { id } = await req.json();
 
     const updatedData = JSON.stringify({
+      ...objectData,
       toDos: objectData.toDos.filter((toDo: ToDoItem) => toDo.id !== id),
     });
 
