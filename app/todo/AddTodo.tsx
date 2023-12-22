@@ -28,6 +28,7 @@ const AddTodo = () => {
   return (
     <section>
       <button
+        id="addToDoButton"
         className="btn btn-primary w-full"
         onClick={() => setModalOpen(true)}
       >
@@ -36,7 +37,7 @@ const AddTodo = () => {
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
         <form onSubmit={handleSubmitNewToDo}>
           <h3 className="font-bold text-lg">Add New To-Do</h3>
-          <section className="modal-action">
+          <section className="modal-action newToDo">
             <input
               value={newToDoValue}
               onChange={(e) => setNewToDoValue(e.target.value)}

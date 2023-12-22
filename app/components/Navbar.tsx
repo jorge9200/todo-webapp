@@ -15,7 +15,7 @@ const Navbar = () => {
         </div>
         <div className="flex-none">
           {status !== "loading" && (
-            <ul className="menu menu-horizontal px-1">
+            <ul id="navbar-menu" className="menu menu-horizontal px-1">
               {session?.user ? (
                 <>
                   <li className="mx-2">

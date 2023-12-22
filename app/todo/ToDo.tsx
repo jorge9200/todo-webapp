@@ -59,6 +59,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
       <td className="">
         <section className="flex place-content-around">
           <MdEdit
+            id="editToDoButton"
             cursor="pointer"
             size={15}
             className="text-gray-500"
@@ -67,7 +68,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
           <Modal modalOpen={editModalOpen} setModalOpen={setEditModalOpen}>
             <form onSubmit={handleSubmitEditToDo}>
               <h3 className="font-bold text-lg">Edit To-Do</h3>
-              <section className="modal-action">
+              <section className="modal-action editToDo">
                 <input
                   value={toDoValue}
                   onChange={(e) => setToDoValue(e.target.value)}
@@ -82,6 +83,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
             </form>
           </Modal>
           <FaRegTrashAlt
+            id="removeToDoButton"
             cursor="pointer"
             size={15}
             className="text-red-600"
@@ -91,7 +93,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
             <h3 className="text-lg">
               Are you sure, you want to remove this To-Do?
             </h3>
-            <section className="modal-action">
+            <section className="modal-action removeToDo">
               <button onClick={handleRemoveToDo} className="btn btn-neutral">
                 Yes
               </button>

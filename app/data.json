@@ -1,1 +1,4 @@
-{"users":[{"email":"jorge92f@gmail.com","password":"1234"},{"email":"paco@gmail.com","password":"6969"},{"email":"jorge92f@gmail.com","password":"1234"}],"toDos":[{"id":"a9309978-b922-40ef-a6f7-daacb41a1279","title":"Be cool","done":true}]}
+{
+  "users": [{ "email": "jorge92f@gmail.com", "password": "1234" }],
+  "toDos": []
+}
