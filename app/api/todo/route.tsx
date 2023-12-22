@@ -81,12 +81,21 @@ export async function DELETE(req: Request) {
     const objectData = JSON.parse(jsonData);
     const { id } = await req.json();
 
-    const updatedData = JSON.stringify({
-      ...objectData,
-      toDos: objectData.toDos.filter((toDo: ToDoItem) => toDo.id !== id),
-    });
-
-    await fs.writeFile(process.cwd() + "/app/data.json", updatedData);
+    if (id) {
+      const updatedData = JSON.stringify({
+        ...objectData,
+        toDos: objectData.toDos.filter((toDo: ToDoItem) => toDo.id !== id),
+      });
+      await fs.writeFile(process.cwd() + "/app/data.json", updatedData);
+    } else {
+      await fs.writeFile(
+        process.cwd() + "/app/data.json",
+        JSON.stringify({
+          ...objectData,
+          toDos: [],
+        })
+      );
+    }
 
     return new Response("ToDo removed successfully", {
       status: 200,

@@ -1,7 +1,7 @@
 "use client";
 import { FormEventHandler, useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import Modal from "./Modal";
+import Modal from "../components/Modal";
 import { v4 as uuidv4 } from "uuid";
 
 const AddTodo = () => {
@@ -10,7 +10,7 @@ const AddTodo = () => {
 
   const handleSubmitNewToDo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:3000/api", {
+    await fetch("http://localhost:3000/api/todo", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

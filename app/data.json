@@ -1,15 +1,1 @@
-{
-  "users": [],
-  "toDos": [
-    {
-      "id": "fe871150-2de3-4f2b-98fc-f3124e7d9bd2",
-      "title": "Ser un loquito",
-      "done": true
-    },
-    {
-      "id": "05778d44-5f00-4e4f-bd6f-e8e67030ff9e",
-      "title": "Terminar este ejercicio",
-      "done": false
-    }
-  ]
-}
+{"users":[{"email":"jorge92f@gmail.com","password":"1234"},{"email":"paco@gmail.com","password":"6969"},{"email":"jorge92f@gmail.com","password":"1234"}],"toDos":[{"id":"a9309978-b922-40ef-a6f7-daacb41a1279","title":"Be cool","done":true}]}

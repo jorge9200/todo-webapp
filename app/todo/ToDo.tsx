@@ -3,7 +3,7 @@ import { ToDoItem } from "@/types/todos";
 import { FormEventHandler, useState } from "react";
 import { MdEdit } from "react-icons/md";
 import { FaRegTrashAlt } from "react-icons/fa";
-import Modal from "./Modal";
+import Modal from "../components/Modal";
 
 type ToDo = {
   toDo: ToDoItem;
@@ -18,7 +18,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
 
   const handleSubmitEditToDo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:3000/api", {
+    await fetch("http://localhost:3000/api/todo", {
       method: "PUT",
       body: JSON.stringify({ ...toDo, title: toDoValue }),
     });
@@ -26,7 +26,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
   };
 
   const handleRemoveToDo = async () => {
-    const res = await fetch("http://localhost:3000/api", {
+    await fetch("http://localhost:3000/api/todo", {
       method: "DELETE",
       body: JSON.stringify({
         id: toDo.id,
@@ -37,7 +37,7 @@ const ToDo: React.FC<ToDo> = ({ toDo, index }) => {
 
   const handleCompleteToDo = async (checked: boolean) => {
     setToDoCompleted(checked);
-    const res = await fetch("http://localhost:3000/api", {
+    await fetch("http://localhost:3000/api/todo", {
       method: "PUT",
       body: JSON.stringify({ ...toDo, done: checked }),
     });
