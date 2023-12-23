@@ -8,6 +8,7 @@ describe("Testing Jorge's App", () => {
     cy.get("h1").should("contain", "Login");
   });
 
+  /* This test is hidden because login is bypassed and it always works (Exercise requirements)
   it("Checks wrong login and show todo page", () => {
     cy.visit("localhost:3000/login");
     cy.get("input[type=email]").type("test@gmail.com");
@@ -15,6 +16,7 @@ describe("Testing Jorge's App", () => {
     cy.get("button[type=submit]").click();
     cy.get(".alert.alert-error").should("be.visible");
   });
+  */
 
   it("Checks correct login and show todo page", () => {
     cy.visit("localhost:3000/login");

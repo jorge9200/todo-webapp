@@ -23,6 +23,11 @@ const handler = NextAuth({
               user.email === credentials.email &&
               user.password === credentials.password
           );
+          // Bypass regular login to allow all logins to work (Exercise requirements)
+          return {
+            email: "alwaysLogged@mail.com",
+            password: "ImAlwaysLogged",
+          };
           return user[0];
         } catch (error) {
           console.error("Failed to fetch user:", error);
