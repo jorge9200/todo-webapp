@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project for showing up how to develop a simple ToDo web app with an authentication system made with [Next Auth](https://next-auth.js.org/).
 
 ## Getting Started
 
@@ -16,21 +16,18 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You will need to login/register to access ToDo page, but currently login is bypassed so any login will work.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Testing
 
-## Learn More
+Only E2E testing was made. It can be executed by running `npm run cypress:open` on the console. You will need to have the development server runing as the testings are made on it.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Future improvements
+- Styling can be improved, some styles with [Tailwind](https://tailwindcss.com/) and [DaisyUI](https://daisyui.com/) have been made in order to have something at least visible.
+- UI/UX can be improved, I would like to insert new ToDo by a editable row on the ToDo list and look more other ToDo apps to copy good ideas.
+- There are not any client validations, some have to be added manually or with a framework like [Formik](https://formik.org/).
+- There are not any server validations neither, some validations for each field received and to expect a JWT token to validate each request.
+- Password should be encrypted.
+- Testing can be improved, by adding more coverage and unit-testing.
+- Remove login bypass, to make login work again.
+- Use a real DB instead of a JSON file. 
