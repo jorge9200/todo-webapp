@@ -1,4 +1,4 @@
-import { Children, Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 type Modal = {
   modalOpen: boolean;
